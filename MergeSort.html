@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <button onclick="imprimir()">Executar</button>
+  <script>
+    function merge(esq, dir) {
+      let ordenado = [];
+      while (esq.length >= 1 && dir.length >= 1) {
+        if (esq[0] < dir[0]) {
+          ordenado.push(esq.shift());
+        } else {
+          ordenado.push(dir.shift());
+        }
+      }
+      return [...ordenado, ...esq, ...dir];
+    }
+
+    function mergeSort(vetor) {
+      if (vetor.length <= 1) {
+        return vetor;
+      }
+      let meio = Math.floor(vetor.length / 2);
+      let esq = mergeSort(vetor.slice(0, meio));
+      let dir = mergeSort(vetor.slice(meio));
+      return merge(esq, dir);
+    }
+
+    function imprimir() {
+      alert(mergeSort([6, 7, 90, 2, 780, 6, 1000, 102, 33, 54, 0]));
+    }
+  </script>
+
+
+</body>
+
+</html>

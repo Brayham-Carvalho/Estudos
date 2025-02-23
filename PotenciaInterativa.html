@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+  
+  <button onclick="imprimir()">Executar</button>
+  
+  <script>
+    function potencia(n, p) {
+      let resultado = 1;
+      if (p == 0){
+        return 1;
+      } else {
+        for (let i = 1; i <= p; i++){
+          resultado = resultado * n;
+        }
+        alert("O resultado de " + n + " elevado a " + p + " é " + resultado + ".");
+      }
+    }
+
+    function potenciaRecursiva(n, p) {
+      if (p == 0) {
+        return 1;
+      } else {
+        return n* potenciaRecursiva(n, p - 1);
+      }
+    }
+
+    function imprimir (){
+      alert("O resultado é: " + potenciaRecursiva(2, 5));
+    }
+    console.log(potenciaRecursiva(2,8));
+  </script>
+
+ 
+</body>
+
+</html>

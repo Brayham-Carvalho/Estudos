@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <button onclick="imprimir()">Executar</button>
+  <script>
+
+      function fatorialInterativo(n) {
+        let resultado = 1;
+        if( n === 0) {
+          alert("O resultado é 1.")
+        } 
+        else {
+          for(let i = 1; i <= n; i++) {
+            resultado = resultado * i;
+          }
+          alert("O resultado de " + n + "!" + " é: " + resultado + ".");
+        }
+      }
+
+    function fatorialRecursivo(n) {
+      if(n === 0) {
+        return 1;
+      } else {
+        return n * fatorialRecursivo(n - 1);
+      }
+    }
+
+    function imprimir() {
+      alert("O resultado é: " + fatorialRecursivo(5) + ".");
+    }
+    
+  </script>
+  
+  
+</body>
+
+</html>

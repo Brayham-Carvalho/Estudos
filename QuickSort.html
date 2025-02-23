@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+ <button onclick="imprimir()">Executar</button>
+  <script>
+
+    function quickSort(vetor) {
+      if (vetor.length <= 1) {
+        return vetor;
+      }
+      else {
+        let pivotIndex = Math.floor(vetor.length / 2);
+        var pivot = vetor[pivotIndex];
+        var esq = [];
+        var dir = [];
+        for (let i = 0; i < vetor.length; i++) {
+          if (i === pivotIndex) {
+            continue;
+          }
+          if (vetor[i] < pivot) {
+            esq.push(vetor[i]);
+          } else {
+            dir.push(vetor[i]);
+          }
+        }
+      }
+      return [...quickSort(esq), pivot, ...quickSort(dir)];
+    }
+
+    function imprimir() {
+      alert(quickSort([33, 87324, 89, 89, 66, 5, 98234329, 41, 12]));
+    }
+    
+  </script>
+
+ 
+</body>
+
+</html>
